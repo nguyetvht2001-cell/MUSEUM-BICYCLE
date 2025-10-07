@@ -54,19 +54,23 @@
 <body>
   <h1>🚲 Bảo tàng Xe đạp</h1>
 
+<div style="display: flex; gap: 20px; justify-content: center;">
   <!-- Mô hình 3D -->
   <model-viewer src="bicycle1.glb" alt="Xe đạp" 
+    style="width: 300px; height: 300px;"
     camera-controls auto-rotate 
     exposure="1" shadow-intensity="1" 
     ar ar-modes="webxr scene-viewer quick-look">
   </model-viewer>
 
-    <!-- Mô hình 3D -->
+  <!-- Mô hình 3D -->
   <model-viewer src="bicycle2.glb" alt="Xe đạp2" 
+    style="width: 300px; height: 300px;"
     camera-controls auto-rotate 
     exposure="1" shadow-intensity="1" 
     ar ar-modes="webxr scene-viewer quick-look">
   </model-viewer>
+</div>
   
   <!-- Điều khiển âm thanh -->
   <div class="controls">
