@@ -80,13 +80,50 @@
   </model-viewer>
 </div>
   
-  <!-- Điều khiển âm thanh -->
-  <div class="controls">
-    <button onclick="playAudio()">Nghe thuyết minh</button>
-    <p class="subtitle" id="subtitle">Ấn nút để nghe thuyết minh...</p>
-  </div>
+<!-- Điều khiển âm thanh -->
+<div class="controls" style="text-align: center; margin-top: 20px;">
+  <button onclick="toggleAudio()">▶️ Phát / ⏸️ Dừng</button>
+  <br><br>
+  <!-- Thanh kéo tua -->
+  <input type="range" id="seekBar" value="0" step="1" min="0" max="100" style="width: 80%;">
+  <p class="subtitle" id="subtitle">Ấn nút để nghe thuyết minh...</p>
+</div>
 
-  <audio id="audio" src="bicyle.mp3"></audio>
+<audio id="audio" src="bicyle.mp3"></audio>
+
+<script>
+  const audio = document.getElementById("audio");
+  const seekBar = document.getElementById("seekBar");
+  const subtitle = document.getElementById("subtitle");
+
+  // Hàm phát / dừng
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      subtitle.innerText = "Đang phát thuyết minh...";
+    } else {
+      audio.pause();
+      subtitle.innerText = "Đã tạm dừng.";
+    }
+  }
+
+  // Cập nhật thanh kéo khi nhạc chạy
+  audio.addEventListener("timeupdate", () => {
+    let value = (audio.currentTime / audio.duration) * 100;
+    seekBar.value = value;
+  });
+
+  // Tua khi kéo thanh
+  seekBar.addEventListener("input", () => {
+    let time = (seekBar.value / 100) * audio.duration;
+    audio.currentTime = time;
+  });
+
+  // Khi kết thúc
+  audio.addEventListener("ended", () => {
+    subtitle.innerText = "Thuyết minh đã kết thúc.";
+  });
+</script>
 
   <script>
     const audio = document.getElementById("audio");
