@@ -2,17 +2,22 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiện vật 3D</title>
+  <title>Bảo tàng Xe đạp</title>
   <link rel="stylesheet" href="style.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
-  <h1>Hiện vật 3D</h1>
-  <model-viewer src="model.glb" alt="Mô hình 3D" auto-rotate camera-controls></model-viewer>
-  <audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    Trình duyệt không hỗ trợ phát âm thanh.
-  </audio>
-  <script src="script.js"></script>
+  <div class="container">
+    <h1>Bảo tàng Xe đạp</h1>
+    <model-viewer src="xedap.glb" alt="Bảo tàng Xe đạp" camera-controls auto-rotate></model-viewer>
+    
+    <div class="audio-section">
+      <button onclick="playAudio()">Nghe thuyết minh</button>
+      <p id="subtitle">Bấm để nghe thuyết minh...</p>
+      <audio id="audio" src="xedap.mp3" preload="auto"></audio>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
 </html>
