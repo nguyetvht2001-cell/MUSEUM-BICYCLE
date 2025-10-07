@@ -1,32 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>🚲 Bảo tàng Xe đạp – Bánh xe của sự tự do</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảo tàng Xe đạp (Museum Bicycle)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header"><h1>🚲 Bảo tàng Xe đạp – Bánh xe của sự tự do</h1></header>
+  <header>
+    <h1>Bảo tàng Xe đạp (Museum Bicycle)</h1>
+    <nav>
+      <a href="#">Trang chủ</a>
+      <a href="#">Lịch sử</a>
+      <a href="#">Hình ảnh</a>
+    </nav>
+  </header>
 
-  <main class="container">
-    <section id="viewer" class="viewer" aria-label="Trình xem 3D"></section>
-
-    <aside class="controls">
-      <div class="controls-inner">
-        <button id="playBtn" class="btn">▶ Nghe thuyết minh</button>
-        <button id="pauseBtn" class="btn" disabled>⏸ Dừng</button>
-        <div id="subtitle" class="subtitle">Phụ đề sẽ hiển thị khi phát audio.</div>
-        <div class="note">Thêm file mô hình .glb và audio vào thư mục <code>assets/</code>.</div>
-      </div>
-    </aside>
+  <main>
+    <section class="intro">
+      <h2>Giới thiệu</h2>
+      <p>Xe đạp đã thay đổi cách con người di chuyển và gắn liền với tự do.</p>
+    </section>
   </main>
 
-  <footer class="site-footer">© Bảo tàng Diệu Kỳ</footer>
+  <footer>
+    <p>&copy; 2025 Bảo tàng 3D – Bảo tàng Xe đạp (Museum Bicycle)</p>
+  </footer>
 
-  <!-- Three.js + GLTFLoader from CDN -->
-  <script src="https://unpkg.com/three@0.156.1/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.156.1/examples/js/loaders/GLTFLoader.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
